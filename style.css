@@ -1,0 +1,37 @@
+.input-mask {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #000;
+}
+
+.input-mask::after, .input-mask::before {
+  content: attr(data-mask);
+  position: absolute;
+  inset: 0;
+  padding: 30px;
+  transform: translate(0, 0);
+  color: #000;
+  pointer-events: none;
+  font-size: 56px;
+}
+
+.input-mask::before {
+  color: #0008;
+  transform: translate(0, 15px);
+  filter: blur(5px);
+}
+
+input[type="password"] {
+  font-size: 56px;
+  padding: 30px;
+  opacity: 0;
+  color: transparent;
+  user-select: none;
+}
+
+input[type="password"]::selection, input[type="password"]::-moz-selection {
+  background: transparent;
+  color: transparent;
+}

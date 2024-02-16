@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Masking with Asterisks</title>
+<script>
+  function maskPassword() {
+    var passwordInput = document.getElementById("password");
+    var maskedPassword = "";
+
+    for (var i = 0; i < passwordInput.value.length; i++) {
+      maskedPassword += "*";
+    }
+
+    passwordInput.value = maskedPassword;
+  }
+</script>
+</head>
+<body>
+
+<label for="password">Password:</label>
+<input type="text" id="password" name="password" oninput="maskPassword()">
+
+</body>
+</html>
